@@ -1,0 +1,116 @@
+body {
+    background-color: white;
+}
+
+header {
+    background-color: #373737;
+    color: white;
+
+}
+
+header #logo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 20%;
+}
+
+header li {
+    margin: 6%;
+    text-decoration: none;
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+}
+
+header li a:hover {
+    background-color: #303030;
+    color: white;
+    text-decoration: none;
+}
+
+header ul {
+    list-style-type: none;
+}
+
+#left {
+    display: inline-block;
+    width: 20%;
+    margin-left: 4.5%;
+    margin-right: 14.5%;
+}
+
+#right {
+    display: inline-block;
+    width: 20%;
+    margin-left: 14.5%;
+    margin-right: 4.5%;
+}
+
+#elemnt {
+    display: inline-block;
+}
+
+footer {
+    float: right;
+    width: 100%;
+    text-align: center;
+    background-color: #373737;
+    color: white;
+    position: fixed;
+    bottom: 0px;
+}
+
+#title {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#pic {
+    position: relative;
+    margin-left: 40%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 15px;
+
+}
+
+.input-group {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.input-group-addon {
+    width: 100px;
+    margin-right: 20;
+    font-weight: 1000;
+}
+
+#prods {
+    width: 80%;
+}
+
+#sub {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+#main {
+    background-color: #ECEFF1;
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

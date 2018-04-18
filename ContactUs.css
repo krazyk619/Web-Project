@@ -1,0 +1,95 @@
+body {
+    background-color: white;
+}
+
+header {
+    background-color: #373737;
+    color: white;
+
+}
+
+header #logo {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 20%;
+}
+
+header li {
+    margin: 6%;
+
+
+}
+
+header li a {
+    text-decoration: none;
+    color: white;
+
+    border-radius: 5px;
+    padding: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
+
+}
+
+header li a:hover {
+    background-color: #303030;
+    color: white;
+    text-decoration: none;
+}
+
+header ul {}
+
+#left {
+    display: inline-block;
+    width: 20%;
+    margin-left: 4.5%;
+    margin-right: 14.5%;
+}
+
+#right {
+    display: inline-block;
+    width: 20%;
+    margin-left: 14.5%;
+    margin-right: 4.5%;
+}
+
+.elemnt {
+    display: inline-block;
+}
+
+#title {
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#formm {
+    width: 50%;
+    height: 100%;
+    /*it can be fixed too*/
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    padding: 13px;
+    padding-bottom: 123px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+
+}
+
+footer {
+
+    width: 100%;
+    text-align: center;
+    background-color: #373737;
+    color: white;
+    position: fixed;
+    bottom: 0;
+
+}
+
+textarea.form-control {
+    height: 150px;
+}

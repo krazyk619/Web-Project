@@ -1,0 +1,204 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="ContactUs.css">
+    <title>Contact Us</title>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+
+    <script>
+        function validateText(id) {
+
+            if ($("#" + id).val() == null || $("#" + id).val() == "" || $("#" + id).val().length < 3) {
+                $("#" + id).removeClass("is-valid");
+                $("#" + id).addClass("is-invalid");
+                return false;
+            } else {
+                $("#" + id).removeClass("is-invalid");
+                $("#" + id).addClass("is-valid");
+                return true;
+            }
+        }
+
+        function validateEmail(email) {
+            //         var pattern = new RegExp("^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+            //    
+            //        if(!pattern.test(email))
+            //            {   
+            //                document.getElementById(email).classList.remove("is-valid");
+            //                document.getElementById(email).classList.add("is-invalid");
+            //                return false;
+            //            }
+            //            else{
+            //            document.getElementById(email).classList.remove("is-invalid");
+            //            document.getElementById(email).classList.add("is-valid");
+            //                    return true;
+            //            }
+
+
+            var point = document.getElementById(email).value.lastIndexOf(".");
+            var at = document.getElementById(email).value.lastIndexOf("@");
+
+            if (point > at + 3 && point > 0 && at > 0) // . must be 3 spaces after the @ sign 
+            {
+                $("#" + email).removeClass("is-invalid");
+                $("#" + email).addClass("is-valid");
+                return true;
+            } else {
+                $("#" + email).removeClass("is-valid");
+                $("#" + email).addClass("is-invalid");
+                return false;
+            }
+
+
+        }
+
+        function validateCountry(id) {
+            if ($("#" + id).children()[0].selected) {
+                $("#" + id).addClass("is-invalid");
+                $("#" + id).removeClass("is-valid");
+                return false;
+            } else {
+                $("#" + id).removeClass("is-invalid");
+                $("#" + id).addClass("is-valid");
+                return true
+
+            }
+        }
+
+        $(document).ready(
+            function() {
+                $("#submitbtn").click(function() {
+                    var submitU = validateText("lastname");
+                    var submitF = validateText("firstname");
+                    var submitL = validateText("message");
+                    var submitE = validateEmail("email");
+                    var submitV = validateCountry("country");
+
+
+                    if (submitU && submitF && submitL && submitE && submitP && submitV && submitC)
+                        $("form#register-form").submit();
+
+                });
+            }
+        )
+    </script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <section id="left">
+            <ul>
+                <li class="elemnt"><a href="Homescreen.html">Home</a></li>
+
+            </ul>
+        </section>
+        <img src="pics/ask.png" alt="logo" id="logo">
+        <section id="right">
+            <ul>
+                <li class="elemnt"><a href="profile.html">Profile</a></li>
+                <li class="elemnt"><a href="login.html">Logout</a></li>
+            </ul>
+        </section>
+
+    </header>
+
+    <h1 id="title">Send us your feedback </h1>
+    <div id="formm">
+
+        <form id="contact-form">
+
+            <div class=" form-group form-row">
+
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <label for="inputfname">First Name</label>
+                    <input type="text" class="form-control" placeholder="First name" id="firstname">
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <label for="inputlname">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Last name" id="lastname">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="form-row">
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+                <div class="form-group col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <label class="centralize" for="inputEmail4">Email</label>
+                    <input type="email" class="centralize form-control" placeholder="Enter a valid email" id="email">
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+                <div class="form-group col-lg-8 col-md-12 col-sm-12 col-xs-12">
+
+                    <label class="centralize" for="inputState">Country</label>
+                    <select id="country" class="centralize form-control">
+        <option selected>Choose...</option>
+        <option>Algeria</option>
+        <option>Bahrain</option>
+        <option>Egypt</option>
+        <option>Kuwait</option>
+        <option>Lebanon</option>
+        <option>Libya</option>
+        <option>Mauritania</option>
+        <option>Morocco</option>
+        <option>Oman</option>
+        <option>Palestine</option>
+        <option>Qatar</option>
+        <option>Saudi Arabia</option>
+        <option>Sudan</option>
+        <option>Syria</option>
+        <option>Tunisia</option>
+        <option>United Arab Emirates</option>
+        <option>Yemen</option>
+          </select>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+                <div class="form-group col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                    <label class="centralize" for="complaint">Complaint</label>
+                    <textarea type="textarea" class="lols centralize form-control" id="message" placeholder="Enter message here"></textarea>
+
+                </div>
+            </div>
+
+
+            <div class="form-row">
+                <div class="col-lg-5 col-md-5 col-sm-4 col-xs-4"></div>
+                <div class="form-group col-lg-7 col-md-7 col-sm-8 col-xs-8">
+                    <button type="button" id="submitbtn" class="centralize btn btn-primary">Send</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <footer>
+        <div class="div1">
+            &copy; Created by Ali, Bahaa, Mohammad &amp; Wafic. All rights reserved
+        </div>
+    </footer>
+</body>
+
+</html>

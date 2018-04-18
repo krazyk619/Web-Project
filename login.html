@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="login_style.css">
+    <title>Ask.Me</title>
+    <meta charset="utf-8">
+
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  
+   <script>
+       
+       function validateText(id)
+        {
+       
+            if($("#"+id).val() == null || $("#"+id).val() == ""|| $("#"+id).val().length < 3 )
+            {   $("#"+id).removeClass("is-valid");
+                $("#"+id).addClass("is-invalid");
+                return false;
+            }
+            else
+            {
+                $("#"+id).removeClass("is-invalid");
+                 $("#"+id).addClass("is-valid");
+                return true;
+            }
+        }
+       
+     function validatePassword(id)
+        {
+            if($("#"+id).val() == "" || $("#"+id).val() == null || $("#"+id).val().length <=7)
+                {
+                    $("#"+id).removeClass("is-valid");
+                    $("#"+id).addClass("is-invalid");
+                    return false;
+                }
+            else 
+                {   
+                    $("#"+id).removeClass("is-invalid");
+                    $("#"+id).addClass("is-valid");
+                    return true;
+                    
+                }
+        }
+       
+       
+       
+       
+    $(document).ready
+    (
+        function()
+        {
+            $("#submitbtn").click(function()
+            {
+                var submitU = validateText("username");
+                var submitP = validatePassword("password");
+                
+                if(submitU && submitP)
+                    $("form#login-form").submit();
+                
+                
+            });
+        }
+    )
+      
+    
+    </script>
+   
+   
+    <script>
+        var i = 0; // Start point
+        var images = [];
+        var time = 8000;
+
+        // Image List
+        images[0] = 'slides/image1.jpg';
+        images[1] = 'slides/image2.jpg';
+        images[2] = 'slides/image3.jpg';
+        images[3] = 'slides/image4.jpg';
+        images[4] = 'slides/image5.jpg';
+
+        // Change Image
+        function changeImg() {
+            document.slide.src = images[i];
+
+            if (i < images.length - 1) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout("changeImg()", time);
+        }
+
+        window.onload = changeImg;
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <section id="left">
+            <ul>
+<!--                <li class="elemnt"><a href="Homescreen.html">Home</a></li>-->
+                <li class="elemnt"><a href="contactUsLogin.html">Contact Us</a></li>
+            </ul>
+        </section>
+        <!--CHANGE DIRECTORY!!!!!!!!!!!!!!!!!!-->
+
+
+        <img src="pics/ask.png" alt="logo" id="logo">
+        <section id="right">
+            <ul>
+                <li id="elemnt"><a href="register_screen.html">Register</a></li>
+                <li id="elemnt"></li>
+            </ul>
+        </section>
+
+
+    </header>
+
+    <section class="container" id="left-side-login">
+        <h1 id="title">Login</h1>
+        
+           <form id="login-form" action="Homescreen.html">
+            <div class="form-row">
+                <img id="pic" src="pics/avatar.png" alt="person">
+            </div>
+            <div class=" form-group form-row">
+
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+
+                    <input name ="username" type="text" class="form-control" placeholder="Username" id="username">
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+
+                    <input name="password" type="password" class="form-control" placeholder="Password" id="password">
+                </div>
+            </div>
+            <div class="form-row">
+
+                <button type="button" class="btn btn-primary center-block" id="submitbtn">Log in</button>
+
+            </div>
+        </form>
+
+    </section>
+
+    <section class="container" id="right-side-slide">
+
+        <div class="pictureSlider">
+            <h1 id="title2">Discover more</h1>
+            <img name="slide" class="slidePictures">
+
+        </div>
+    </section>
+
+
+
+    <footer>
+        <div class="div1">
+            &copy; Created by Ali, Bahaa, Mohammad &amp; Wafic. All rights reserved
+        </div>
+    </footer>
+
+</body>
+
+</html>
